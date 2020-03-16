@@ -144,7 +144,7 @@ DEVLIST1=$(/sbin/camcontrol devlist)
 # You could use another strategy, e.g., find something in the camcontrol devlist 
 # output that is unique to the drives you want, for instance only WDC drives:
 # if [[ $LINE != *"WDC"* ]] . . .
-DEVLIST="$(echo "$DEVLIST1"|sed '/KINGSTON/d;/ADATA/d;/SanDisk/d;/OCZ/d;/LSI/d;/INTEL/d;/TDKMedia/d;/SSD/d')"
+DEVLIST="$(echo "$DEVLIST1"|sed '/KINGSTON/d;/ADATA/d;/SanDisk/d;/OCZ/d;/LSI/d;/INTEL/d;/AHCI/d;/SSD/d')"
 DEVCOUNT=$(echo "$DEVLIST" | wc -l)
 printf "\n%s\n%s\n%s\n" "NOTE ABOUT DUTY CYCLE (Fan%0 and Fan%1):" \
 "Some boards apparently report incorrect duty cycle, and can" \
