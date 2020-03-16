@@ -57,10 +57,10 @@ function manage_data {
    # Read duty cycle, convert to decimal.
    # May need to disable these 3 lines as some boards apparently return
    # incorrect data. In that case just assume $DUTY hasn't changed.
-#   DUTY0=$($IPMITOOL raw 0x30 0x70 0x66 0 0) # in hex
-#   DUTY0=$((0x$(echo $DUTY0)))   # strip leading space and decimate
-#   DUTY1=$($IPMITOOL raw 0x30 0x70 0x66 0 1) # in hex
-#   DUTY1=$((0x$(echo $DUTY1)))   # strip leading space and decimate
+   DUTY0=$($IPMITOOL raw 0x30 0x70 0x66 0 0) # in hex
+   DUTY0=$((0x$(echo $DUTY0)))   # strip leading space and decimate
+   DUTY1=$($IPMITOOL raw 0x30 0x70 0x66 0 1) # in hex
+   DUTY1=$((0x$(echo $DUTY1)))   # strip leading space and decimate
    # Read fan mode, convert to decimal.
    MODE=$($IPMITOOL raw 0x30 0x45 0) # in hex
    MODE=$((0x$(echo $MODE)))   # strip leading space and decimate
